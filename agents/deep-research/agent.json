@@ -1,0 +1,79 @@
+{
+  "agent": {
+    "name": "Deep Research",
+    "summary": "Sourced research on the open web and provided documents, with claims linked to quoted evidence."
+  },
+  "integrity": {
+    "files": [
+      {
+        "executable": false,
+        "path": "agents/deep-research/instructions.md",
+        "sha256": "e564700abd03ebb387396a81f6bdfe28fe884b324cee1c955b264a253813dbb3",
+        "sizeBytes": 3555
+      },
+      {
+        "executable": false,
+        "path": "agents/deep-research/skills/deep-research/SKILL.md",
+        "sha256": "444f494c961fc802215c60913ee0a8733bd221518c7524d2f6b97eb48a19c5b7",
+        "sizeBytes": 15630
+      },
+      {
+        "executable": false,
+        "path": "agents/deep-research/skills/deep-research/references/helper-briefs.md",
+        "sha256": "232a5432d99524d7e45eb6c28a96bbb588d012f61aace8b645e85a8683b1fe34",
+        "sizeBytes": 2794
+      },
+      {
+        "executable": true,
+        "path": "agents/deep-research/skills/deep-research/scripts/research.py",
+        "sha256": "724430583119b1c95f51f1270c70e89ebdc0e93cb8c9a32c387d89cfe2085c67",
+        "sizeBytes": 80566
+      },
+      {
+        "executable": false,
+        "path": "agents/deep-research/skills/deep-research/templates/report.html",
+        "sha256": "03ae17a9bcb03b78881716a281a959932ec94d4d73cc48466cc0dba2e51f900d",
+        "sizeBytes": 4665
+      }
+    ],
+    "packageSha256": "ba09b5e752c4c8f86c250e676a320cea1e620d92de13b2ef63a40d4b857ad9e9"
+  },
+  "ownedSkills": [
+    {
+      "displayName": "Deep Research",
+      "name": "deep-research",
+      "path": "agents/deep-research/skills/deep-research"
+    }
+  ],
+  "package": {
+    "name": "deep-research",
+    "version": "12"
+  },
+  "profile": {
+    "chatProfileKey": "agentic-claude-opus-5-5",
+    "enabledTools": [
+      "open_workspace",
+      "send_attachment",
+      "web_search_gateway"
+    ],
+    "ingress": "anthropic_messages",
+    "modelId": "claude-opus-5-5",
+    "skills": [
+      {
+        "kind": "owned",
+        "name": "deep-research"
+      }
+    ],
+    "thinkingLevel": "high",
+    "webSearchModelId": "web-search"
+  },
+  "references": [],
+  "requirements": {
+    "builtins": [],
+    "capabilities": [
+      "secondbox"
+    ],
+    "notes": "Enable the Agent's internet access after import. Sites is optional and is needed only for Site export."
+  },
+  "schemaVersion": 1
+}

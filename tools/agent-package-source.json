@@ -1,0 +1,6 @@
+{
+  "repository": "https://github.com/SecondStack-AI/SecondStack",
+  "commit": "df44ac85725d3698c1070ed23798114ee8f40e00",
+  "path": "apps/chat/chainlit/backend/chainlit/agent_package.py",
+  "sha256": "ef3f42542ef355303b3162c559548d44a72d810c58e8053902e7071837c6e7c4"
+}

@@ -2,7 +2,7 @@
 
 A named Agent that researches a question on the open web, or in documents you provide, and answers with a sourced report. Every factual claim is linked to the passage that supports it, checked against that passage, and cited. Nickname: *Citation Needed*.
 
-The method lives in the [`deep-research` Skill](../../skills/deep-research/SKILL.md). The [instructions](instructions.md) set the persona, delivery rules and the overrides the Skill needs.
+The method lives in the Agent-owned [`deep-research` Skill](skills/deep-research/SKILL.md). The [instructions](instructions.md) set the persona, delivery rules and the overrides the Skill needs. The [profile manifest](agent.json) carries the portable settings and Skill selection.
 
 ## How it works
 
@@ -17,14 +17,18 @@ The method lives in the [`deep-research` Skill](../../skills/deep-research/SKILL
 
 | Setting | Value |
 |---|---|
-| Chat profile | An agentic profile with a strong reasoning model |
+| Chat profile | `agentic-claude-opus-5-5` / `claude-opus-5-5`, high reasoning |
 | Tools | **Metered web search** with a search model selected; **Workspace**; **Send attachments** |
 | Internet access | On (the workspace fetches pages over HTTPS) |
-| Skills | `deep-research`, uploaded as a Skill the Agent owns. The built-in **Browser** and **Sites** Skills are used automatically when available |
+| Skills | `deep-research`, bundled as a Skill the Agent owns. The built-in **Browser** and **Sites** Skills are used automatically when available |
 | Sites | Optional; needed only for the Site export |
 | Instructions | The full text of [instructions.md](instructions.md) |
 
 Search is the Agent's `web_search` tool. The Skill logs each search but cannot see the tool calls, so search counts in its status are reported by the Agent, not measured.
+
+The initial manifest is seeded from this Agent's documented configuration and SecondStack's default profile definitions, not captured from a live Agent. Metered search uses `web-search`. A target must provide that search model, the configured Chat profile/model and SecondBox. Profile/model availability is checked by Chat's import preview.
+
+Run `scripts/package-agent.sh deep-research` from the repository root and import `dist/deep-research.zip` through Chat's **Agents → Import**. Review the resulting draft, enable the Agent's internet access, run evaluations and publish. Internet policy is deployment state and does not travel in the package. Sites remains optional.
 
 ## Using it
 
